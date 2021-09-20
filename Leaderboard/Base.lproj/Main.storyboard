@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DMS-Ar-tJA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Nothing-->
+        <scene sceneID="auH-DT-iNj">
+            <objects>
+                <viewController id="jTv-b0-G2Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oJU-az-zUD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble.variable" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-Hs-NBf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768.5"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bs9-2N-kG4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4cg-Hs-NBf" firstAttribute="leading" secondItem="Bs9-2N-kG4" secondAttribute="leading" id="SY5-ez-fE4"/>
+                            <constraint firstItem="Bs9-2N-kG4" firstAttribute="bottom" secondItem="4cg-Hs-NBf" secondAttribute="bottom" id="gDG-CH-Pig"/>
+                            <constraint firstItem="Bs9-2N-kG4" firstAttribute="trailing" secondItem="4cg-Hs-NBf" secondAttribute="trailing" id="gew-0e-HBz"/>
+                            <constraint firstItem="4cg-Hs-NBf" firstAttribute="top" secondItem="Bs9-2N-kG4" secondAttribute="top" id="jCR-IJ-btN"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Nothing" image="scribble" catalog="system" id="uPO-w8-pQv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmj-bV-nQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="86"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PrM-4f-jUB">
+            <objects>
+                <tabBarController id="DMS-Ar-tJA" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5bu-Zd-eHo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="OFV-CC-u0A"/>
+                        <segue destination="jTv-b0-G2Y" kind="relationship" relationship="viewControllers" id="4T9-x9-rKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hke-we-2Ny" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="-1088"/>
+        </scene>
+        <!--Leaderboard-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LeaderboardSelectionVC" customModule="Leaderboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ylq-aJ-mem">
+                                <rect key="frame" x="8" y="52" width="398" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="5mL-kL-kKK"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Department"/>
+                                    <segment title="Group"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControllerDidSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="7Dc-Ph-IO0"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diB-pk-Dtq">
+                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
+                                <connections>
+                                    <segue destination="YjD-1I-mbH" kind="embed" identifier="embedPageController" id="LvL-Uf-riw"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="diB-pk-Dtq" secondAttribute="trailing" id="1rt-Tv-Ifg"/>
+                            <constraint firstItem="Ylq-aJ-mem" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="CnX-xF-dkk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ylq-aJ-mem" secondAttribute="trailing" constant="8" id="L9X-8r-W3a"/>
+                            <constraint firstItem="diB-pk-Dtq" firstAttribute="top" secondItem="Ylq-aJ-mem" secondAttribute="bottom" id="O87-tP-LV6"/>
+                            <constraint firstItem="diB-pk-Dtq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QGs-CY-Y6J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="diB-pk-Dtq" secondAttribute="bottom" id="bU2-Ky-PDF"/>
+                            <constraint firstItem="Ylq-aJ-mem" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="saJ-hE-qBh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="list.bullet.rectangle.portrait" catalog="system" id="gw3-XI-QG5"/>
+                    <connections>
+                        <outlet property="segmentController" destination="Ylq-aJ-mem" id="jg7-ER-ApU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="85.714285714285708"/>
+        </scene>
+        <!--Leaderboard Selection PageVC-->
+        <scene sceneID="v78-r5-o9w">
+            <objects>
+                <pageViewController storyboardIdentifier="LeaderboardPageVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="YjD-1I-mbH" customClass="LeaderboardSelectionPageVC" customModule="Leaderboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLC-lM-ggK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="773"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="scribble" catalog="system" width="128" height="118"/>
+        <image name="scribble.variable" catalog="system" width="128" height="118"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
